@@ -26,6 +26,15 @@ body{
   transition: transform 0.8s ease-in-out;
 }
 
+.carousel-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
 .map-responsive {
   position: relative;
   padding-bottom: 56.25%; 
@@ -175,4 +184,15 @@ body{
 .card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.content-wrapper {
+    background: rgba(47, 45, 45, 0.2);
+    padding: 30px;
+    transition: background 0.3s;
+    color: rgb(255, 255, 255);
+}
+
+.content-wrapper:hover {
+    background: rgba(52, 50, 50, 0.7); 
 }

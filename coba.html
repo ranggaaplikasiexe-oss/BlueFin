@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlueFin Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .card { transition: transform 0.2s; }
+    .card:hover { transform: scale(1.03); }
+  </style>
+</head>
+
+<body>
+  <!-- MENU -->
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">
+        <img src="img/logo.png" width="60"> <strong>BlueFin Store</strong>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+        </ul>
+
+        <!-- SEARCH -->
+        <form class="d-flex ms-auto" onsubmit="event.preventDefault(); searchProduct();">
+          <input id="searchInput" class="form-control me-2" type="search" placeholder="Search Product...">
+          <button class="btn btn-dark" type="button" onclick="searchProduct()">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+
+    <h2 class="text-center mb-3">New Our Product!!</h2>
+
+    <!-- PRODUK -->
+    <div class="row" id="productList">
+
+      <!-- PRODUCT 1 -->
+      <div class="col-md-4 mb-4 product-card">
+        <div class="card h-100">
+          <img src="img/produk1.webp" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title product-name"><strong>JORAN KENZI GALATOP</strong></h5>
+            <p class="card-text">Joran kuat dan ringan untuk segala medan.</p>
+            <p class="text-muted">Rp 245.000</p>
+            <a class="btn btn-primary w-100">Beli Sekarang</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="col-md-4 mb-4 product-card">
+        <div class="card h-100">
+          <img src="img/produk2.webp" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title product-name"><strong>REEL KENZI GRACE PRO</strong></h5>
+            <p class="card-text">Reel modern dengan kekuatan dan kelancaran tinggi.</p>
+            <p class="text-muted">Rp 410.000</p>
+            <a class="btn btn-primary w-100">Beli Sekarang</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="col-md-4 mb-4 product-card">
+        <div class="card h-100">
+          <img src="img/produk3.webp" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title product-name"><strong>PE KENZI PIRANHA X12</strong></h5>
+            <p class="card-text">Senar premium 12 braid, super kuat dan halus.</p>
+            <p class="text-muted">Rp 160.000</p>
+            <a class="btn btn-primary w-100">Beli Sekarang</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-primary text-white text-center py-3 mt-4">
+    <p>&copy; 2025 BlueFin Store. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- SEARCH FUNCTION -->
+  <script>
+    function searchProduct() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let products = document.querySelectorAll(".product-card");
+
+      products.forEach(card => {
+        let name = card.querySelector(".product-name").innerText.toLowerCase();
+        if (name.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
